@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// redux
+import { Provider } from 'react-redux';
+import Restaurant_Store from './restaurant-component/components/redux/restaurant_store';
+
+//restaurant
+import {Restaurant_routings} from "./restaurant-component/routings/restaurant_routings"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={Restaurant_Store}>
+      <Restaurant_routings />
+    </Provider>
+    
   </React.StrictMode>
 );
 
